@@ -1879,8 +1879,19 @@ class RandomTreesEmbedding(BaseForest):
 
     Attributes
     ----------
+    base_estimator_ : ExtraTreeRegressor
+        The child estimator template used to create the collection of fitted
+        sub-estimators
+
     estimators_ : list of DecisionTreeClassifier
         The collection of fitted sub-estimators.
+
+    feature_importances_ : array of shape = [n_features]
+        The feature importances (the higher, the more important the feature).
+
+    one_hot_encoder_ : OneHotEncoder
+        A transformer that encodes categorical integer features as a one-hot
+        numeric array.
 
     References
     ----------
